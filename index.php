@@ -15,17 +15,17 @@
 </head>
 <body>
 
-<div class="PicturecutImageContainer">
+<div class="PictureCutImageContainer">
 </div>
 <script>
-$(".PicturecutImageContainer").each(function(){
-	var PicturecutImageContainer = $(this);
-	var InputName = PicturecutImageContainer.siblings("input").attr("id");
-	PicturecutImageContainer.PictureCut({
+$(".PictureCutImageContainer").each(function(){
+	var PictureCutImageContainer = $(this);
+	var InputName = PictureCutImageContainer.siblings("input").attr("id");
+	PictureCutImageContainer.PictureCut({
 		Extensions                  : ["jpg","jpeg","png","gif"],
 		InputOfImageDirectory       : InputName,
-		PluginFolderOnServer        : "<?= rtrim($_SERVER['REQUEST_URI'], '/') ?>/picture.cut/",
-		FolderOnServer              : "<?= str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', __DIR__)) ?>/uploads/",
+		PluginFolderOnServer        : "<?= str_replace('//', '/', $_SERVER['REQUEST_URI'] . '/picture.cut/') ?>",
+		FolderOnServer              : "<?= str_replace('//', '/', str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', __DIR__)) . '/uploads/') ?>",
 		EnableCrop                  : true,
 		CropWindowStyle             : "Bootstrap",
 		ImageNameRandom             : false,
@@ -34,8 +34,8 @@ $(".PicturecutImageContainer").each(function(){
 		MaximumSize                 : 4096,
 		EnableMaximumSize           : false,
 		UploadedCallback            : function(data){
-			PicturecutImageContainer.siblings("input").val(data["currentFileName"]);
-			textCount(PicturecutImageContainer.siblings("input"), false);
+			PictureCutImageContainer.siblings("input").val(data["currentFileName"]);
+			textCount(PictureCutImageContainer.siblings("input"), false);
 		}
 	});
 });
