@@ -35,7 +35,6 @@ $(".PictureCutImageContainer").each(function(){
 		EnableMaximumSize           : false,
 		UploadedCallback            : function(data){
 			PictureCutImageContainer.siblings("input").val(data["currentFileName"]);
-			textCount(PictureCutImageContainer.siblings("input"), false);
 		}
 	});
 });
