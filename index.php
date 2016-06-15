@@ -10,12 +10,38 @@
 <!-- Picture cut -->
 <script src="picture.cut/src/jquery.picture.cut.js"></script>  
 <!-- Modifier -->
-<link href="modifier/style.min.css" rel="stylesheet">
-<script src="modifier/mod.js"></script>  
+<link href="modifier/style.css" rel="stylesheet">
+<script src="modifier/mod.js"></script>
+<style>
+.wrap {
+    width: 200px;
+    height: 150px;
+    margin: 2em auto;
+    padding-bottom: 40px;
+    box-sizing: content-box;
+    border: 1px solid #ccc;
+}
+input {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    border: none;
+    border-top: 1px solid #ccc;
+    padding: 5px;
+}
+</style>
 </head>
 <body>
-<div class="PictureCutImageContainer"></div>
-<input type="text" value="" placeholder="Image name">
+    <div class="wrap">
+        <div class="PictureCutImageContainer"></div>
+        <input type="text" value="" placeholder="" disabled="true">
+    </div>
+        
+    <div class="wrap">
+        <div class="PictureCutImageContainer"></div>
+        <input type="text" value="" placeholder="" disabled="true">
+    </div>
 <script>
 $(".PictureCutImageContainer").each(function() {
 	var PictureCutImageContainer = $(this);
@@ -37,6 +63,12 @@ $(".PictureCutImageContainer").each(function() {
 		}
 	});
 });
+
+//$(".PictureCutImageContainer.picture-element-principal").each(function(){
+//    $(this).width('auto').height('auto').css('text-align', 'center').css('border', 'none');
+//    $(this).children('form').children('input').width('100%').height('100%');
+//    $(this).children('form').children('img').height('100%');
+//});
 	
 pictureCutModifier.initCropMode([
 	{"value" : 9/16, "label" : "9 x 16"},

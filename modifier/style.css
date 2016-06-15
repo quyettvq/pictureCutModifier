@@ -118,5 +118,20 @@
 .PictureCutImageContainer.picture-element-principal {
     background-repeat: no-repeat;
     background-size: contain;
-    margin-bottom: 0.25em;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center !important;
+    border: none !important;
+    overflow-y: hidden !important;
+}
+.PictureCutImageContainer.picture-element-principal input
+{
+    width: 100% !important;
+    height: 100% !important;
+}
+.PictureCutImageContainer.picture-element-principal img {
+    width: 100% !important;
+    height: auto !important;
 }
