@@ -14,11 +14,10 @@
 <script src="modifier/mod.js"></script>  
 </head>
 <body>
-
-<div class="PictureCutImageContainer">
-</div>
+<div class="PictureCutImageContainer"></div>
+<input type="text" value="" placeholder="Image name">
 <script>
-$(".PictureCutImageContainer").each(function(){
+$(".PictureCutImageContainer").each(function() {
 	var PictureCutImageContainer = $(this);
 	var InputName = PictureCutImageContainer.siblings("input").attr("id");
 	PictureCutImageContainer.PictureCut({
@@ -33,7 +32,7 @@ $(".PictureCutImageContainer").each(function(){
 		MinimumHeightToResize       : 4096,
 		MaximumSize                 : 4096,
 		EnableMaximumSize           : false,
-		UploadedCallback            : function(data){
+		UploadedCallback            : function(data) {
 			PictureCutImageContainer.siblings("input").val(data["currentFileName"]);
 		}
 	});
