@@ -3,7 +3,7 @@
  Author     : Tran Van Quyet <quyettvq at gmail.com>
  */
 var pictureCutModifier = {};
-pictureCutModifier.initCropMode = function initCropMode(ratios)
+pictureCutModifier.initCropMode = function (ratios)
 {
     $(document).bind('DOMNodeInserted', function (e) {
         // console.log(e.target, ' was inserted');
